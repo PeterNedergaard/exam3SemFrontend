@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import facade from "./apiFacade";
 import {Outlet, Link} from "react-router-dom";
 import "./App.css";
+import apiFacade from "./apiFacade";
 
 
 function LogIn({login}) {
@@ -9,7 +10,7 @@ function LogIn({login}) {
     const [loginCredentials, setLoginCredentials] = useState(init);
 
     const performLogin = (evt) => {
-        evt.preventDefault();
+        // evt.preventDefault();
         login(loginCredentials.username, loginCredentials.password);
     }
     const onChange = (evt) => {
@@ -30,7 +31,11 @@ function LogIn({login}) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="password" placeholder="Password"/>
                 </div>
-                <button className="btn btn-primary login-element" onClick={performLogin}>Login</button>
+
+                <Link to="/welcome">
+                    <button className="btn btn-primary login-element" onClick={performLogin}>Login</button>
+                </Link>
+
             </form>
         </div>
     )
@@ -46,8 +51,39 @@ function LoggedIn() {
 
     return (
         <div className="header-info">
-            <h5>User: {facade.getName()}</h5>
-            <h5>Role: {facade.getRoles()}</h5>
+
+            <div className="nameAndRoleContainer">
+                <h5>User: {facade.getName()}</h5>
+                <h5>Role: {facade.getRoles()}</h5>
+            </div>
+
+            <div>
+
+                <div className="link-container">
+
+                    <Link to="/welcome" style={{textDecoration: 'none', color:'black'}}>
+                        <button className="btn btn-light menuBtn firstMenuBtn">
+                            Welcome page
+                        </button>
+                    </Link>
+
+                    <Link to="/userpage" style={{textDecoration: 'none', color:'black'}}>
+                        <button className="btn btn-light menuBtn">
+                            User page
+                        </button>
+                    </Link>
+
+                    <Link to="/adminpage" style={{textDecoration: 'none', color:'black'}}>
+                        <button className="btn btn-light menuBtn">
+                            Admin page
+                        </button>
+                    </Link>
+
+                </div>
+
+            </div>
+
+
         </div>
     )
 
@@ -67,28 +103,43 @@ function App() {
 
     }
 
+
+    useEffect(() => {
+
+        if(apiFacade.loggedIn() === true){
+            setLoggedIn(true);
+        }
+
+    }, [])
+
+
     return (
         <div>
             {!loggedIn ? (<LogIn login={login}/>) :
                 (<div className="header">
-                    <LoggedIn/>
+
+                    <nav style={{borderBottom: "solid 1px", paddingBottom: "1rem",}}>
+                        <LoggedIn/>
+                    </nav>
+
                     <button className="btn btn-danger" id="logout-btn" onClick={logout}>Logout</button>
 
-                    <nav
-                        style={{
-                            borderBottom: "solid 1px",
-                            paddingBottom: "1rem",
-                        }}
-                    >
+                    {/*<nav*/}
+                    {/*    style={{*/}
+                    {/*        borderBottom: "solid 1px",*/}
+                    {/*        paddingBottom: "1rem",*/}
+                    {/*    }}*/}
+                    {/*>*/}
 
-                        <div className="link-container">
-                            <Link to="/welcome">Welcome page</Link> |{" "}
-                            <Link to="/userpage">User page</Link> |{" "}
-                            <Link to="/adminpage">Admin page</Link> |{" "}
-                            <Link to="/jokes">Jokes</Link>
-                        </div>
+                    {/*    <div className="link-container">*/}
+                    {/*        <Link to="/welcome">Welcome page</Link> |{" "}*/}
+                    {/*        <Link to="/userpage">User page</Link> |{" "}*/}
+                    {/*        <Link to="/adminpage">Admin page</Link> |{" "}*/}
+                    {/*        <Link to="/jokes">Jokes</Link>*/}
+                    {/*    </div>*/}
 
-                    </nav>
+                    {/*</nav>*/}
+
                     <Outlet/>
 
                 </div>)}
