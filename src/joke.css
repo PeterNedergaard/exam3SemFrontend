@@ -1,0 +1,24 @@
+
+.table-style {
+    width: 50%;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.joke-button {
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 40px;
+}
