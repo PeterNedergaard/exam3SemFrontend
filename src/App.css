@@ -68,6 +68,10 @@
   margin: 20px;
 }
 
+.loginTitle{
+  margin-top: 120px;
+}
+
 
 .headerContainer {
   flex-direction: row;

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import "../guestsShows.css";
+import "../showsByGuest.css";
 import apiFacade from "../apiFacade";
+import {Link} from "react-router-dom";
 
 const ShowsByGuest = () => {
 
@@ -51,6 +52,12 @@ const ShowsByGuest = () => {
         <div>
             <h1 className="title">Guests shows</h1>
 
+            <div className="backBtnContainer">
+                <Link to="/userpage">
+                    <button className="btn btn-danger">Go back</button>
+                </Link>
+            </div>
+
             <div className="dropdownContainer">
 
                 <div className="dropdown">
@@ -68,7 +75,7 @@ const ShowsByGuest = () => {
 
                     <br/>
 
-                    <button onClick={btnHandler} className="btn btn-secondary">Get boats</button>
+                    <button onClick={btnHandler} className="btn btn-success">Get shows</button>
 
                 </div>
 

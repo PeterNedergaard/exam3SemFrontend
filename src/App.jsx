@@ -17,9 +17,10 @@ function LogIn({login}) {
         setLoginCredentials({...loginCredentials, [evt.target.id]: evt.target.value})
     }
 
-    return (
-
+    return (<div>
+            <h1 className="title loginTitle">FESTIVAL<img style={{width: 50}} src="/src/favicon.png"/>MANAGER</h1>
         <div className="container">
+
             <form className="login-container" onChange={onChange}>
                 <h2 className="login-element login-text">Login</h2>
                 <div className="form-group">
@@ -38,7 +39,7 @@ function LogIn({login}) {
 
             </form>
         </div>
-    )
+    </div>)
 
 }
 
@@ -110,6 +111,8 @@ function App() {
             setLoggedIn(true);
         }
 
+        document.title = "Festival Manager"
+
     }, [])
 
 
@@ -123,22 +126,6 @@ function App() {
                     </nav>
 
                     <button className="btn btn-danger" id="logout-btn" onClick={logout}>Logout</button>
-
-                    {/*<nav*/}
-                    {/*    style={{*/}
-                    {/*        borderBottom: "solid 1px",*/}
-                    {/*        paddingBottom: "1rem",*/}
-                    {/*    }}*/}
-                    {/*>*/}
-
-                    {/*    <div className="link-container">*/}
-                    {/*        <Link to="/welcome">Welcome page</Link> |{" "}*/}
-                    {/*        <Link to="/userpage">User page</Link> |{" "}*/}
-                    {/*        <Link to="/adminpage">Admin page</Link> |{" "}*/}
-                    {/*        <Link to="/jokes">Jokes</Link>*/}
-                    {/*    </div>*/}
-
-                    {/*</nav>*/}
 
                     <Outlet/>
 

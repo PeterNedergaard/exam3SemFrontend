@@ -6,6 +6,13 @@
     flex-direction: column;
 }
 
+.backBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
 .labelItem{
     margin-bottom: 20px;
 }

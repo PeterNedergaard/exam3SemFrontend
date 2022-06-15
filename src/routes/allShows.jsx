@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import apiFacade from "../apiFacade";
+import {Link} from "react-router-dom";
 
 const AllShows = () => {
 
@@ -23,6 +24,11 @@ const AllShows = () => {
         <div>
             <h1 className="title">All shows</h1>
 
+            <div className="backBtnContainer">
+                <Link to="/userpage">
+                    <button className="btn btn-danger">Go back</button>
+                </Link>
+            </div>
 
             <div className="table-container">
                 <table className="table table-light table-striped table-style">
@@ -30,7 +36,7 @@ const AllShows = () => {
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Duration</th>
+                        <th scope="col">Duration (min)</th>
                         <th scope="col">Location</th>
                         <th scope="col">StartDate</th>
                         <th scope="col">StartTime</th>

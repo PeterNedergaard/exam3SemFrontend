@@ -44,7 +44,7 @@ const CreateFestival = () => {
             }else if(event.target.value === "update"){
                 updateFestival();
             }
-
+            window.location.reload();
         }
     }
 

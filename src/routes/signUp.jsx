@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import apiFacade from "../apiFacade";
 import ApiFacade from "../apiFacade";
+import {Link} from "react-router-dom";
 
 const SignUp = () => {
 
@@ -65,6 +66,12 @@ const SignUp = () => {
         <div>
             <h1 className="title">Sign up to show</h1>
 
+            <div className="backBtnContainer">
+                <Link to="/userpage">
+                    <button className="btn btn-danger">Go back</button>
+                </Link>
+            </div>
+
             <div className="dropdownContainer">
 
                 <div className="dropdown">
@@ -98,7 +105,7 @@ const SignUp = () => {
             </div>
 
             <div className="connectBtnContainer">
-                <button onClick={btnHandler} className="btn btn-secondary">Connect</button>
+                <button onClick={btnHandler} className="btn btn-success">Connect</button>
             </div>
 
 
