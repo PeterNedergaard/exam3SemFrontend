@@ -45,23 +45,22 @@ const ShowsByGuest = () => {
 
     const btnHandler = () => {
         setFetcher(!fetcher);
-        setFetcher(!fetcher);
     }
 
     return (
         <div>
             <h1 className="title">Guests shows</h1>
 
-            <div className="guestDropdownContainer">
+            <div className="dropdownContainer">
 
-                <div className="guestDropdown">
+                <div className="dropdown">
                     <select onClick={clickHandler} name="guests" id="guests">
 
                         <option selected="true" disabled="disabled" value="">Choose a guest:</option>
 
                         {guestList.map((guest, index) => {
                             return(
-                                <option key={index} value={guest.email}>{guest.name}</option>
+                                <option key={index} value={guest.id}>{guest.name}</option>
                             )
                         })}
 

@@ -12,6 +12,9 @@ import AdminPage from "./routes/adminPage";
 import ApiFacade from "./apiFacade";
 import AllShows from "./routes/allShows";
 import ShowsByGuest from "./routes/showsByGuest";
+import SignUp from "./routes/signUp";
+import CreateFestival from "./routes/createFestival";
+import UpdateFestival from "./routes/updateFestival";
 
 
 const rootElement = document.getElementById("root");
@@ -24,6 +27,9 @@ render(
                 <Route path="/adminpage" element={<AdminPage/>}/>
                 <Route path="/allshows" element={<AllShows/>}/>
                 <Route path="/guestsshows" element={<ShowsByGuest/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
+                <Route path="/createfestival" element={<CreateFestival/>}/>
+                <Route path="/updatefestival" element={<UpdateFestival/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,

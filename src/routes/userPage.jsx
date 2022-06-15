@@ -24,7 +24,7 @@ const UserPage = props => {
                             </button>
                         </Link>
 
-                        <Link to="/adminpage" style={{textDecoration: 'none', color:'black'}}>
+                        <Link to="/signup" style={{textDecoration: 'none', color:'black'}}>
                             <button className="btn btn-light menuBtn">
                                 Sign up to show
                             </button>
@@ -34,7 +34,7 @@ const UserPage = props => {
 
                 </div>)
                 :
-                (<h1>You are not a user</h1>)
+                (<h1 className="title">You are not a user</h1>)
             }
         </div>
     );

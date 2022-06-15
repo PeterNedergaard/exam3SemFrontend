@@ -1,0 +1,20 @@
+
+.labelContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.labelItem{
+    margin-bottom: 20px;
+}
+
+.labelBtn{
+    margin-top: 40px;
+}
+
+.festivalDropdown{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}

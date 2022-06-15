@@ -50,11 +50,46 @@ function apiFacade() {
             .then(handleHttpErrors)
     }
 
-    const getShowsByGuest = async(guestEmail) => {
+    const getFestivals = async() => {
 
-        return await fetch(URL + "/api/info/showsbyguest/" + guestEmail)
+        return await fetch(URL + "/api/info/allfestivals")
             .then(handleHttpErrors)
     }
+
+    const getShowsByGuest = async(guestId) => {
+
+        return await fetch(URL + "/api/info/showsbyguest/" + guestId)
+            .then(handleHttpErrors)
+    }
+
+    const addGuestToShow = (guestId, showId) => {
+
+        const options = makeOptions("POST", false,{guestId: guestId, showId: showId });
+
+        return fetch(URL + "/api/info/addguesttoshow", options)
+            .then(handleHttpErrors)
+    }
+
+    const createFestival = (name, city, startDate, duration) => {
+
+        const options = makeOptions("POST", false,{name: name, city: city, startDate: startDate, duration: duration});
+
+        return fetch(URL + "/api/info/createfestival", options)
+            .then(handleHttpErrors)
+    }
+
+    const updateFestival = (festivalId, updatedName, updatedCity, updatedStartDate, updatedDuration) => {
+
+        const options = makeOptions("POST", false,{festivalId: festivalId, name: updatedName, city: updatedCity,
+                                                                        startDate: updatedStartDate, duration: updatedDuration});
+
+        return fetch(URL + "/api/info/updatefestival", options)
+            .then(handleHttpErrors)
+    }
+
+
+
+
 
     const login = (user, password) => {
         const options = makeOptions("POST", true,{username: user, password: password });
@@ -105,7 +140,11 @@ function apiFacade() {
         getName,
         getShows,
         getGuests,
-        getShowsByGuest
+        getShowsByGuest,
+        addGuestToShow,
+        createFestival,
+        getFestivals,
+        updateFestival
     }
 }
 
