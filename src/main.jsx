@@ -9,8 +9,8 @@ import Welcome from "./routes/welcome";
 import UserPage from "./routes/userPage";
 import AdminPage from "./routes/adminPage";
 import ApiFacade from "./apiFacade";
-import Jokes from "./routes/jokes";
-
+import AllShows from "./routes/allShows";
+import "./joke.css";
 
 
 const rootElement = document.getElementById("root");
@@ -21,7 +21,7 @@ render(
                 <Route path="/welcome" element={<Welcome/>}/>
                 <Route path="/userpage" element={<UserPage/>}/>
                 <Route path="/adminpage" element={<AdminPage/>}/>
-                <Route path="/jokes" element={<Jokes/>}/>
+                <Route path="/allshows" element={<AllShows/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,

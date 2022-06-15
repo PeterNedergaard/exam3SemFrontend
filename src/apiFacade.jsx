@@ -36,8 +36,12 @@ function apiFacade() {
 
         return await fetch(URL + "/api/info/jokes")
             .then(handleHttpErrors)
-            // .then(res => ())
+    }
 
+    const getShows = async() => {
+
+        return await fetch(URL + "/api/info/allshows")
+            .then(handleHttpErrors)
     }
 
     const login = (user, password) => {
@@ -86,7 +90,8 @@ function apiFacade() {
         fetchData,
         getRoles,
         getJokes,
-        getName
+        getName,
+        getShows
     }
 }
 
