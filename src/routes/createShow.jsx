@@ -41,7 +41,7 @@ const CreateShow = () => {
                 console.log(chosen, event.target.value);
             }
 
-            window.location.reload();
+            // window.location.reload();
         }
     }
 

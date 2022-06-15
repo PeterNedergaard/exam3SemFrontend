@@ -27,7 +27,7 @@ const DeleteShow = () => {
     const btnHandler = () => {
         if(chosen !== ""){
             deleteShow();
-            window.location.reload();
+            // window.location.reload();
         }
     }
 

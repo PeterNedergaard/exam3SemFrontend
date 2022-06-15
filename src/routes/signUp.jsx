@@ -30,9 +30,6 @@ const SignUp = () => {
         fetchShows();
         fetchGuests();
 
-        console.log(showList);
-        console.log(guestList);
-
     }, [])
 
 

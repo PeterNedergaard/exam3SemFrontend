@@ -37,7 +37,7 @@ const CreateGuest = () => {
                 updateGuest();
             }
 
-            window.location.reload();
+            // window.location.reload();
         }
     }
 
