@@ -14,7 +14,9 @@ import AllShows from "./routes/allShows";
 import ShowsByGuest from "./routes/showsByGuest";
 import SignUp from "./routes/signUp";
 import CreateFestival from "./routes/createFestival";
-import UpdateFestival from "./routes/updateFestival";
+import DeleteShow from "./routes/deleteShow";
+import CreateShow from "./routes/createShow";
+import CreateGuest from "./routes/createGuest";
 
 
 const rootElement = document.getElementById("root");
@@ -29,7 +31,9 @@ render(
                 <Route path="/guestsshows" element={<ShowsByGuest/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/createfestival" element={<CreateFestival/>}/>
-                <Route path="/updatefestival" element={<UpdateFestival/>}/>
+                <Route path="/createshow" element={<CreateShow/>}/>
+                <Route path="/createguest" element={<CreateGuest/>}/>
+                <Route path="/deleteshow" element={<DeleteShow/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,

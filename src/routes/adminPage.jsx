@@ -19,37 +19,19 @@ const AdminPage = () => {
                                 </button>
                             </Link>
 
-                            <Link to="/guestsshows" style={{textDecoration: 'none', color:'black'}}>
+                            <Link to="/createshow" style={{textDecoration: 'none', color:'black'}}>
                                 <button className="btn btn-light menuBtn">
-                                    Create show
+                                    Create/update show
                                 </button>
                             </Link>
 
-                            <Link to="/signup" style={{textDecoration: 'none', color:'black'}}>
+                            <Link to="/createguest" style={{textDecoration: 'none', color:'black'}}>
                                 <button className="btn btn-light menuBtn">
-                                    Create guest account
+                                    Create/update guest
                                 </button>
                             </Link>
 
-                            <Link to="/updatefestival" style={{textDecoration: 'none', color:'black'}}>
-                                <button className="btn btn-light menuBtn">
-                                    Update festival
-                                </button>
-                            </Link>
-
-                            <Link to="/signup" style={{textDecoration: 'none', color:'black'}}>
-                                <button className="btn btn-light menuBtn">
-                                    Update show
-                                </button>
-                            </Link>
-
-                            <Link to="/signup" style={{textDecoration: 'none', color:'black'}}>
-                                <button className="btn btn-light menuBtn">
-                                    Update guest account
-                                </button>
-                            </Link>
-
-                            <Link to="/signup" style={{textDecoration: 'none', color:'black'}}>
+                            <Link to="/deleteshow" style={{textDecoration: 'none', color:'black'}}>
                                 <button className="btn btn-light menuBtn">
                                     Delete a show
                                 </button>

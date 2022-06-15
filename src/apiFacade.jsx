@@ -80,14 +80,54 @@ function apiFacade() {
 
     const updateFestival = (festivalId, updatedName, updatedCity, updatedStartDate, updatedDuration) => {
 
-        const options = makeOptions("POST", false,{festivalId: festivalId, name: updatedName, city: updatedCity,
-                                                                        startDate: updatedStartDate, duration: updatedDuration});
-
+        const options = makeOptions("POST", false,{festivalId: festivalId, updatedName: updatedName, updatedCity: updatedCity,
+                                                                        updatedStartDate: updatedStartDate, updatedDuration: updatedDuration});
         return fetch(URL + "/api/info/updatefestival", options)
             .then(handleHttpErrors)
     }
 
+    const deleteShow = (showId) => {
 
+        const options = makeOptions("POST", false,{showId: showId});
+
+        return fetch(URL + "/api/info/deleteshow", options)
+            .then(handleHttpErrors)
+    }
+
+    const createShow = (name, duration, location, startDate, startTime) => {
+
+        const options = makeOptions("POST", false,{name: name, duration: duration, location: location, startDate: startDate
+                                                                        ,startTime: startTime});
+
+        return fetch(URL + "/api/info/createshow", options)
+            .then(handleHttpErrors)
+    }
+
+    const updateShow = (showId ,updatedName, updatedDuration, updatedLocation, updatedStartDate, updatedStartTime) => {
+
+        const options = makeOptions("POST", false,{showId: showId, updatedName: updatedName, updatedDuration: updatedDuration,
+                                                                        updatedLocation: updatedLocation, updatedStartDate: updatedStartDate,
+                                                                        updatedStartTime: updatedStartTime});
+        return fetch(URL + "/api/info/updateshow", options)
+            .then(handleHttpErrors)
+    }
+
+    const createGuest = (name, phone, email, status) => {
+
+        const options = makeOptions("POST", false,{name: name, phone: phone, email: email, status: status});
+
+        return fetch(URL + "/api/info/createguest", options)
+            .then(handleHttpErrors)
+    }
+
+    const updateGuest = (guestId, updatedName, updatedPhone, updatedEmail, updatedStatus) => {
+
+        const options = makeOptions("POST", false,{guestId: guestId, updatedName: updatedName,
+                                                                        updatedPhone: updatedPhone, updatedEmail: updatedEmail,
+                                                                        updatedStatus: updatedStatus});
+        return fetch(URL + "/api/info/updateguest", options)
+            .then(handleHttpErrors)
+    }
 
 
 
@@ -144,7 +184,12 @@ function apiFacade() {
         addGuestToShow,
         createFestival,
         getFestivals,
-        updateFestival
+        updateFestival,
+        deleteShow,
+        createShow,
+        updateShow,
+        createGuest,
+        updateGuest
     }
 }
 

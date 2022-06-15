@@ -14,6 +14,7 @@ const CreateFestival = () => {
     const [chosen, setChosen] = useState("");
 
     const [created, setCreated] = useState(false);
+    const [updated, setUpdated] = useState(false);
 
 
     useEffect(() => {
@@ -41,7 +42,7 @@ const CreateFestival = () => {
             if(event.target.value === "create"){
                 createFestival();
             }else if(event.target.value === "update"){
-
+                updateFestival();
             }
 
         }
@@ -53,8 +54,8 @@ const CreateFestival = () => {
     }
 
     const updateFestival = () => {
-        setCreated(true);
-        apiFacade.createFestival(name,city,startDate,duration);
+        setUpdated(true);
+        apiFacade.updateFestival(chosen,name,city,startDate,duration);
     }
 
     const clickHandler = (event) => {
@@ -73,11 +74,10 @@ const CreateFestival = () => {
 
 
                 <div className="dropdownContainer festivalDropdown">
-
                     <div className="dropdown">
                         <select onClick={clickHandler} name="guests" id="guests">
 
-                            <option selected="true" value="">Choose to update:</option>
+                            <option selected="true" value="">Choose a festival to update:</option>
 
                             {festivalList.map((festival, index) => {
                                 return(
@@ -87,9 +87,8 @@ const CreateFestival = () => {
 
                         </select>
                     </div>
-
-
                 </div>
+
 
                 <label htmlFor="name">Name:</label>
                 <input onChange={() => {setName(event.target.value)}} className="labelItem" type="text" id="name" placeholder="ex. Roskilde festival"/>
@@ -101,7 +100,7 @@ const CreateFestival = () => {
                 <input onChange={() => {setStartDate(event.target.value)}} className="labelItem" type="text" id="startDate" placeholder="ex. 12-04-2022"/>
 
                 <label htmlFor="duration">Duration (days):</label>
-                <input onChange={() => {setDuration(event.target.value)}} className="labelItem" type="text" id="duration" placeholder="ex. 7"/>
+                <input onChange={() => {setDuration(event.target.value)}} className="labelItem" type="number" id="duration" placeholder="ex. 7"/>
 
 
                 {chosen === "" ?
@@ -115,13 +114,21 @@ const CreateFestival = () => {
                 }
 
 
+                {/*This section is not usable when using the 'window.location.reload()' */}
                 {created === true ?
                     (<div className="signedUpTextContainer">
                         <h5 className="title" style={{color: 'green'}}>The festival has been created</h5>
                     </div>)
-                    :
-                    (<></>)
+                    : (<></>)
                 }
+
+                {updated === true ?
+                    (<div className="signedUpTextContainer">
+                        <h5 className="title" style={{color: 'green'}}>The festival has been updated</h5>
+                    </div>)
+                    : (<></>)
+                }
+
             </div>
 
         </div>
