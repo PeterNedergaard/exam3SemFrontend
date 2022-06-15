@@ -4,13 +4,14 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import "./joke.css";
 import App from "./App";
 import Welcome from "./routes/welcome";
 import UserPage from "./routes/userPage";
 import AdminPage from "./routes/adminPage";
 import ApiFacade from "./apiFacade";
 import AllShows from "./routes/allShows";
-import "./joke.css";
+import ShowsByGuest from "./routes/showsByGuest";
 
 
 const rootElement = document.getElementById("root");
@@ -22,6 +23,7 @@ render(
                 <Route path="/userpage" element={<UserPage/>}/>
                 <Route path="/adminpage" element={<AdminPage/>}/>
                 <Route path="/allshows" element={<AllShows/>}/>
+                <Route path="/guestsshows" element={<ShowsByGuest/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,

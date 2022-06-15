@@ -44,6 +44,18 @@ function apiFacade() {
             .then(handleHttpErrors)
     }
 
+    const getGuests = async() => {
+
+        return await fetch(URL + "/api/info/allguests")
+            .then(handleHttpErrors)
+    }
+
+    const getShowsByGuest = async(guestEmail) => {
+
+        return await fetch(URL + "/api/info/showsbyguest/" + guestEmail)
+            .then(handleHttpErrors)
+    }
+
     const login = (user, password) => {
         const options = makeOptions("POST", true,{username: user, password: password });
         return fetch(URL + "/api/login", options)
@@ -91,7 +103,9 @@ function apiFacade() {
         getRoles,
         getJokes,
         getName,
-        getShows
+        getShows,
+        getGuests,
+        getShowsByGuest
     }
 }
 

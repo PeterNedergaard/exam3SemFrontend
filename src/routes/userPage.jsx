@@ -18,7 +18,7 @@ const UserPage = props => {
                             </button>
                         </Link>
 
-                        <Link to="/userpage" style={{textDecoration: 'none', color:'black'}}>
+                        <Link to="/guestsshows" style={{textDecoration: 'none', color:'black'}}>
                             <button className="btn btn-light menuBtn">
                                 Guests shows
                             </button>

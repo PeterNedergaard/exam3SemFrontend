@@ -1,0 +1,11 @@
+
+.guestDropdownContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.guestDropdown{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
